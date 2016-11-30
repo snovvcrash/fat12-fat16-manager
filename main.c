@@ -11,7 +11,7 @@ struct TfileRecord TfileRecord;
 
 int func_num = 0;
 
-int parse(char *line, char **v_args) {
+int parse(char *line, char *v_args[]) {
 	// Parse string
 	
 	int num = -1;

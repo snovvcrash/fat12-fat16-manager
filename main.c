@@ -11,7 +11,7 @@ struct TfileRecord TfileRecord;
 
 int func_num = 0;
 
-int parse(char *line, char *v_args[]) {
+int parse(char *line, char **v_args) {
 	// Parse string
 	
 	int num = -1;
@@ -37,7 +37,7 @@ int parse(char *line, char *v_args[]) {
 	return ++num;
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char **argv) {
 	FILE *img;
 	uint16_t nclust;
 	size_t n = 0;

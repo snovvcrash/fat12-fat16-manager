@@ -17,6 +17,7 @@ COBJECTS=$(patsubst %.c, %.o, $(CSOURCES))
 .PHONY: cxxbuild cbuild all default clean
 .PRECIOUS: $(CXXTARGET) $(CTARGET) $(CXXOBJECTS) $(COBJECTS)
 
+all: clean default
 default: cbuild
 cxxbuild: $(CXXTARGET)
 	@echo "Build cxx-project"
@@ -24,19 +25,19 @@ cbuild: $(CTARGET)
 	@echo "Build c-project"
 
 $(CXXTARGET): $(CXXOBJECTS)
-	@echo "CXX $?"
+	@echo "(CXX) $?"
 	@$(CXX) $(CXXOBJECTS) $(LDFLAGS) -o $@
 
 $(CTARGET): $(COBJECTS)
-	@echo "CC $?"
+	@echo "(CC) $?"
 	@$(CC) $(COBJECTS) $(LDFLAGS) -o $@
 	
 %.o: %.cxx $(HEADERS)
-	@echo "CXX $<"
+	@echo "(CXX) $<"
 	@$(CXX) $(CXXFLAGS) $< -o $@
 
 %.o: %.c $(HEADERS)
-	@echo "CC $<"
+	@echo "(CC) $<"
 	@$(CC) $(CFLAGS) $< -o $@
 
 clean:

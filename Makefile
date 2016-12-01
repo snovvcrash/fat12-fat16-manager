@@ -42,4 +42,4 @@ $(CTARGET): $(COBJECTS)
 
 clean:
 	@echo "Clean project"
-	@rm -rf *.o */*.o $(CXXTARGET) $(CTARGET)
+	@rm -rfv *.o */*.o $(CXXTARGET) $(CTARGET)

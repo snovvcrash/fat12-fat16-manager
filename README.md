@@ -21,6 +21,7 @@ Tiny command line tool which lets you do some trivial operations (receive, send,
   $ ln -s fat <func_name>
   $ ./<func_name> <./test-img/image_name.img> [file_name]
   ```
+  
   Where `func_name` can be one of: `recv`, `send`, `del`, `undel` or `showdir`.
       
 ### 2. Clean project:
